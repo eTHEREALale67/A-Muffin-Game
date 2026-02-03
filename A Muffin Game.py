@@ -15,7 +15,6 @@ def slow_print(text, speed=0.05, newline=True):
         print() 
 
 prod = [
-  "seeb",
   "Oprah Winfrey",
   "Gu-Gu-Gu",
   "Degraded Versions",
@@ -39,13 +38,27 @@ slogan = [
 side_effect = [
   "Causes extreme denial",
   "Scary hallucinations of Mickey Mouse",
-  ""
+  "God in all of his true glory shining down upon you and yours",
+  "Sudden urges to visit Epstein island",
+  "Makes you believe Diddy is behind you at all times",
+  "becoming a muffin",
+  "getting trapped in a Vietnam war flashback",
+  "controllable laughter",
+  "privilege of killing every single human on the planet."
 ]
+
+def advertisement():
+  slow_print(f"Introducing {random.choice(prod)}!")
+  slow_print(f"Our Slogan: {random.choice(slogan)}")
+  slow_print(f"Side Effects May Include: {random.choice(side_effect)}")
 
 def start_of_game():
   slow_print("Welcome to The Muffin Game!")
   time.sleep(2)
   slow_print("In this game, you run a cafe")
+  time.sleep(2)
+  print()
+  advertisement()
   time.sleep(2)
   slow_print("These are your options: ", newline=False)
   options = input("1. Bake Muffins\n2. Bake Cupcakes\n3. Bake Cookies\n4. Bake a Cake\n5. Bake a Pie\n6. Bake some Bread\n7. Dan\n8.Deliver Food/n Choose an option (1-8): ")
