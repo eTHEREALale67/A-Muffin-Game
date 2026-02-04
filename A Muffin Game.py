@@ -4,15 +4,24 @@ import sys
 import threading
 import select
 
-from requests import options
-
-def slow_print(text, speed=0.04, newline=True):
+def slow_print(text, speed=0.03, newline=True):
     for char in text:
         sys.stdout.write(char)  
         sys.stdout.flush()      
         time.sleep(speed)       
     if newline:
         print() 
+weights = [6, 7, 6, 5, 1]
+
+foodGrades = [
+  "perfect",
+  "good",
+  "odd",
+  "bad",
+  "in the face of Jeffery Epstein!",
+]
+
+foodGrade = random.choices(foodGrades, weights=weights, k=1)[0]
 
 prod = [
   "Oprah Winfrey",
@@ -27,6 +36,7 @@ prod = [
   "'berries'",
   "Vietnam"
   ]
+
 slogan = [
   "sample text",
   "Absolutely not 'bees' backwards",
@@ -36,7 +46,7 @@ slogan = [
 ]
 
 side_effect = [
-  "Causes extreme denial",
+  "Extreme denial",
   "Scary hallucinations of Mickey Mouse",
   "God in all of his true glory shining down upon you and yours",
   "Sudden urges to visit Epstein island",
@@ -47,9 +57,21 @@ side_effect = [
   "privilege of killing every single human on the planet."
 ]
 
+deliveryEvents = [
+  "you realize you forgot to put the food in the van and have to go back to your cafe to get it.",
+  "you get into a car accident and have to go to the hospital.",
+  "you think you see a celebrity on the street and stop to take a picture, but it turns out to be a homeless person and they steal your food.",
+  "you get the feeling that your ai chatbot is watching you and it starts to give you weird suggestions on where to go and what to do, so you decide to ignore it and keep driving, but then it starts to hack into your car and takes control of it, and you end up driving into a lake and drowning.",
+  "paranormal activity occurs right in front of your car, and you begin to question your sanity, but then you realize that the paranormal activity is actually just a glitch in the matrix and you are able to escape it unharmed.",
+  "your favorite song comes on the radio and then you somehow think youre in a plane and theres autopiolot but there is not and you crash into a tree. After you wake up, you find yourself in Narnia with the food so you decide to open a cafe there.",
+  "you get a flat tire and have to change it, but then you realize you dont know how to change a tire and you end up getting hit by a car while trying to figure it out.",
+  "you randomly teleport to the customers house and deliver the food, and end up getting a 5 star review!",
+  ""
+]
 def advertisement():
+  print("=======================================\n MANDITORY BAKERY ADVERTISEMENT BREAK \n========================================")
   slow_print(f"Introducing {random.choice(prod)}!")
-  slow_print(f"Our Slogan: {random.choice(slogan)}")
+  slow_print(f"{random.choice(slogan)}")
   slow_print(f"Side Effects May Include: {random.choice(side_effect)}")
 
 def start_of_game():
@@ -60,28 +82,31 @@ def start_of_game():
   print()
   advertisement()
   time.sleep(2)
-  slow_print("These are your options: ", newline=False)
-  options = input("1. Bake Muffins\n2. Bake Cupcakes\n3. Bake Cookies\n4. Bake a Cake\n5. Bake a Pie\n6. Bake some Bread\n7. Dan\n8.Deliver Food/n Choose an option (1-8): ")
+  print()
+  time.sleep(1)
+  slow_print("These are your options:")
+  options = input("\n1. Bake Muffins\n2. Bake Cupcakes\n3. Bake Cookies\n4. Bake a Cake\n5. Bake a Pie\n6. Bake some Bread\n7. Dan\n8.Deliver Food\n Choose an option (1-8): ")
+  
   if options == "1":
-    bake_muffins()
+    bake_muffins(foodGrade)
 
   elif options == "2":
-    bake_cupcakes()
+    bake_cupcakes(foodGrade)
 
   elif options == "3":
-    bake_cookies()
+    bake_cookies(foodGrade)
 
   elif options == "4":
-    bake_cake()
+    bake_cake(foodGrade)
 
   elif options == "5":
-    bake_pie()
+    bake_pie(foodGrade)
 
   elif options == "6":
-    bake_bread()
+    bake_bread(foodGrade)
 
   elif options == "7":
-    dan()
+    dan(foodGrade)
 
   elif options == "8":
     deliver_food()
@@ -90,28 +115,84 @@ def start_of_game():
     slow_print("Invalid option. Please choose a number between 1 and 8.")
     start_of_game()
 
-def bake_muffins():
-  start_of_game()
+def bake_muffins(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting muffins in oven...")
+  time.sleep(2)
+  slow_print(f"Your muffins came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
 
-def bake_cupcakes():
-  start_of_game()
 
-def bake_cookies():
-  start_of_game()
 
-def bake_cake():
-  start_of_game()
+def bake_cupcakes(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting cupcakes in oven...")
+  time.sleep(2)
+  slow_print(f"Your cupcakes came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
 
-def bake_pie():
-  start_of_game()
 
-def bake_bread():
-  start_of_game()
 
-def dan():
-  start_of_game
+def bake_cookies(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting cookies in oven...")
+  time.sleep(2)
+  slow_print(f"Your cookies came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
+
+
+def bake_cake(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting cake in oven...")
+  time.sleep(2)
+  slow_print(f"Your cake came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
+
+
+def bake_pie(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting pie in oven...")
+  time.sleep(2)
+  slow_print(f"Your pie came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
+
+
+def bake_bread(foodGrade):
+  slow_print("Mixing Batter...")
+  time.sleep(1)
+  slow_print("Putting bread in oven...")
+  time.sleep(2)
+  slow_print(f"Your bread came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
+
+
+def dan(foodGrade):
+  slow_print("In this game, your name is dan!")
+  time.sleep(2)
+  slow_print("You put yourself in the oven...")
+  slow_print(f"And your dan came out {foodGrade}!")
+  time.sleep(2)
+  advertisement()
+
 
 def deliver_food():
-  start_of_game
+  slow_print("you get in your delivery van and start driving to your customer's house...")
+  time.sleep(2)
+  slow_print(f"But then, {random.choice(deliveryEvents)}")
+  time.sleep(2)
+  advertisement()
 
-start_of_game()
+
+if __name__ == "__main__":
+  start_of_game()
