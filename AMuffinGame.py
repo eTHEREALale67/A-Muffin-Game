@@ -84,6 +84,8 @@ deliveryEvents = [
   "you randomly teleport to the customers house and deliver the food, and end up getting a 5 star review!"
 ]
 
+deliveryEvent = random.choice(deliveryEvents)
+
 goodCustomerReviews = [
   "“Very good muffin. I bite once, suddenly remember childhood and also minor tax fraud. Will return when government stop watching me.”",
   "“I ask for blueberry muffin. They give me something that looks like blueberry but screams when cut. Delicious. Ten out of five.”",
@@ -164,6 +166,8 @@ def fight():
     if hp <= 0:
       slow_print("You were defeated by the conglomerate. Better luck next time!")
       break
+def narnia():
+
   
   start_of_game()
 
@@ -189,10 +193,12 @@ def customer_interaction():
   start_of_game()
 
 def advertisement():
+  time.sleep(1)
   print("=======================================\n MANDITORY BAKERY ADVERTISEMENT BREAK \n========================================")
   slow_print(f"Introducing {random.choice(prod)}!")
   slow_print(f"{random.choice(slogan)}")
   slow_print(f"Side Effects May Include: {random.choice(side_effect)} and {random.choice(side_effect)}")
+  time.sleep(2)
 
 def start_of_game():
   advertisement()
@@ -200,37 +206,39 @@ def start_of_game():
   print()
   time.sleep(1)
   slow_print("These are your options:")
-  options = input("\n1. Bake Muffins\n2. Bake Cupcakes\n3. Bake Cookies\n4. Bake a Cake\n5. Bake a Pie\n6. Bake some Bread\n7. Dan\n8.Deliver Food\n10.Talk\n Choose an option (1-9): ")
+  options = input("\n1. Bake Muffins\n2. Bake Cupcakes\n3. Bake Cookies\n4. Bake a Cake\n5. Bake a Pie\n6. Bake some Bread\n7. Dan\n8. Deliver Food\n9. Talk\n Choose an option (1-10): ")
   
   if options == "1":
-    bake_muffins(foodGrade)
+    bake_muffins()
 
   elif options == "2":
-    bake_cupcakes(foodGrade)
+    bake_cupcakes()
 
   elif options == "3":
-    bake_cookies(foodGrade)
+    bake_cookies()
 
   elif options == "4":
-    bake_cake(foodGrade)
+    bake_cake()
 
   elif options == "5":
-    bake_pie(foodGrade)
+    bake_pie()
 
   elif options == "6":
-    bake_bread(foodGrade)
+    bake_bread()
 
   elif options == "7":
-    dan(foodGrade)
+    dan()
 
   elif options == "8":
     deliver_food()
+
   elif options == "9":
-    fight()
-  elif options == "10":
     customer_interaction()
+
+  elif options == "10":
+    fight()
   else:
-    slow_print("Invalid option. Please choose a number between 1 and 9.")
+    slow_print("Invalid option. Please choose a number between 1 and 10.")
     start_of_game()
 
 def bake_muffins():
@@ -242,7 +250,7 @@ def bake_muffins():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -257,7 +265,7 @@ def bake_cupcakes():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -272,7 +280,7 @@ def bake_cookies():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -286,7 +294,7 @@ def bake_cake():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -300,7 +308,7 @@ def bake_pie():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -314,7 +322,7 @@ def bake_bread():
   time.sleep(2)
   if foodGrade == foodGrades[0] or foodGrades[1]:
     slow_print(f"Your customer review: {goodCustomerReview}")
-  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+  if foodGrade == foodGrades[2] or foodGrades[3] or foodGrades[4]:
     slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
@@ -329,14 +337,23 @@ def dan():
   slow_print(f"Dan says: 'thank you for giving me life.'")
   slow_print(f"Dan leaves the bakery, to 'pursue true glory'")
   advertisement()
+  slow_print("Game over.")
+  time.sleep(1)
+  slow_print("Exiting...")
+  time.sleep(1)
+  exit()
 
 
 def deliver_food():
   slow_print("you get in your delivery van and start driving to your customer's house...")
   time.sleep(2)
-  slow_print(f"But then, {random.choice(deliveryEvents)}")
+  slow_print(f"But then, {deliveryEvent}")
   time.sleep(2)
   advertisement()
+  if deliveryEvent == deliveryEvents[5]:
+    narnia()
+  if deliveryEvent == deliveryEvents[7]:
+    slow_print(f"Your customers review: {goodCustomerReview}")
 
 
 
