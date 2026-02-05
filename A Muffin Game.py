@@ -13,7 +13,7 @@ def slow_print(text, speed=0.03, newline=True):
         time.sleep(speed)       
     if newline:
         print() 
-weights = [6, 7, 6, 5, 1]
+weights = [6, 7, 6, 5, 0.5]
 
 foodGrades = [
   "perfect",
@@ -95,8 +95,26 @@ goodCustomerReviews = [
 
 badCustomerReviews = [
   "“Muffin explode. Not metaphor. Actual explode. I lose eyebrow but gain wisdom. Mixed feelings.”",
-  ""
 ]
+
+goodCustomerReview = random.choice(goodCustomerReviews)
+badCustomerReview = random.choice(badCustomerReviews)
+
+def main_menu():
+  slow_print("Welcome to A Muffin Game!")
+  time.sleep(1)
+  slow_print("\nYour options are...")
+  time.sleep(1)
+  mainMenuOptions = input("\n1. Start the game in normal mode\n2. Start the game in Russian mode\n3. Exit\n")
+  if mainMenuOptions == "1":
+    start_of_game()
+  elif mainMenuOptions == "2":
+    exit
+  elif mainMenuOptions == "3":
+    slow_print("Exiting...")
+    time.sleep(1)
+    exit
+
 
 def fight():
   c_hp = 100
@@ -175,17 +193,6 @@ def advertisement():
   slow_print(f"Introducing {random.choice(prod)}!")
   slow_print(f"{random.choice(slogan)}")
   slow_print(f"Side Effects May Include: {random.choice(side_effect)} and {random.choice(side_effect)}")
-  print("\n=======================================\n MANDITORY BAKERY ADVERTISEMENT BREAK \n========================================")
-  slow_print(f"Introducing {random.choice(prod)}!")
-  slow_print(f"{random.choice(slogan)}")
-  slow_print(f"Side Effects May Include: {random.choice(side_effect)} and {random.choice(side_effect)}")
-
-def intro():
-  slow_print("Welcome to The Muffin Game!")
-  time.sleep(2)
-  slow_print("Here, you run a cafe")
-  time.sleep(2)
-  print()
 
 def start_of_game():
   advertisement()
@@ -233,6 +240,10 @@ def bake_muffins():
   time.sleep(2)
   slow_print(f"Your muffins came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
@@ -312,5 +323,4 @@ def deliver_food():
 
 
 if __name__ == "__main__":
-  intro()
-  start_of_game()
+  main_menu()
