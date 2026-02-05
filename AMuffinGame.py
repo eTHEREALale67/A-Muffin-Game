@@ -255,6 +255,10 @@ def bake_cupcakes():
   time.sleep(2)
   slow_print(f"Your cupcakes came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
@@ -266,6 +270,10 @@ def bake_cookies():
   time.sleep(2)
   slow_print(f"Your cookies came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
@@ -276,6 +284,10 @@ def bake_cake():
   time.sleep(2)
   slow_print(f"Your cake came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
@@ -286,6 +298,10 @@ def bake_pie():
   time.sleep(2)
   slow_print(f"Your pie came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
@@ -296,6 +312,10 @@ def bake_bread():
   time.sleep(2)
   slow_print(f"Your bread came out {foodGrade}!")
   time.sleep(2)
+  if foodGrade == foodGrades[0] or foodGrades[1]:
+    slow_print(f"Your customer review: {goodCustomerReview}")
+  if foodGrade == foodGrades[2] or foodGrade[3] or foodGrade[4]:
+    slow_print(f"Your customer review: {badCustomerReview}")
   advertisement()
 
 
