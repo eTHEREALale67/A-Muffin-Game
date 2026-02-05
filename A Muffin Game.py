@@ -84,7 +84,19 @@ deliveryEvents = [
   "you randomly teleport to the customers house and deliver the food, and end up getting a 5 star review!"
 ]
 
+goodCustomerReviews = [
+  "“Very good muffin. I bite once, suddenly remember childhood and also minor tax fraud. Will return when government stop watching me.”",
+  "“I ask for blueberry muffin. They give me something that looks like blueberry but screams when cut. Delicious. Ten out of five.”",
+  "“Muffin is okay. Little dry, like my uncle’s sense of humor after 1998 incident. Still, better than bread line. Recommend.”",
+  "4/5 Stars! Muffin was a little dry, but it tasted amazing. Especially after it stared bleeding. Recommend",
+  "“Very cozy shop. Smells like cinnamon and mild corruption. Reminds me of home.”",
+  ""
+]
 
+badCustomerReviews = [
+  "“Muffin explode. Not metaphor. Actual explode. I lose eyebrow but gain wisdom. Mixed feelings.”",
+  ""
+]
 
 def fight():
   c_hp = 100
